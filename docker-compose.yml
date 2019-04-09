@@ -35,8 +35,12 @@ services:
       - ./worker:/app
 
   nginx:
-    image: nginx
-      
+    build: 
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    restart: always
+    ports: 
+      - 8080:80
 
   postgres:
     container_name: postgres
