@@ -13,7 +13,7 @@ after_success:
   - docker build -t puku/complex-nginx ./nginx
   - docker build -t puku/complex-server ./server
   - docker build -t puku/complex-worker ./worker
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
   - docker push puku/complex-client
   - docker push puku/complex-nginx
   - docker push puku/complex-server
