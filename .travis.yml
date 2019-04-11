@@ -18,3 +18,10 @@ after_success:
   - docker push puku/complex-nginx
   - docker push puku/complex-server
   - docker push puku/complex-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-west-1
+  app: complex
+  env: Complex-env
+  bucket_name: elasticbeanstalk-us-west-1-374043555782
